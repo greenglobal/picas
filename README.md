@@ -1,5 +1,5 @@
-# career
-Career page for Green Global. Based on [web-starter](https://github.com/ndaidong/web-starter).
+# picas
+Main website for picas.us - based on [web-starter](https://github.com/ndaidong/web-starter).
 
 ### Usage
 
