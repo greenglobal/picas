@@ -71,10 +71,11 @@
     },
     "javascript": {
       "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js",
+      "doc": "https://rawgit.com/ndaidong/doc/master/dist/doc.min.js",
       "jquery": "https://code.jquery.com/jquery-2.2.4.min.js",
-      "jqueryScroll": "https://raw.githubusercontent.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.js",
       "modernizr": "https://raw.githubusercontent.com/re-clone/modernizr/master/modernizr.custom.js",
-      "typewritter": "https://rawgit.com/ndaidong/typewritter/master/dist/typewritter-effect.min.js"
+      "typewritter": "https://rawgit.com/ndaidong/typewritter/master/dist/typewritter-effect.min.js",
+      "wow": "https://raw.githubusercontent.com/matthieua/WOW/master/dist/wow.js"
     }
   }
 }

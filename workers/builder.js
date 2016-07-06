@@ -238,7 +238,12 @@ var compileCSS = (files) => {
     files.forEach((file) => {
       if (fs.existsSync(file)) {
         let x = fs.readFileSync(file, 'utf8');
-        as.push(x);
+        let is3rd = file.includes('vendor/');
+        if (is3rd) {
+          vs.push(x);
+        } else {
+          as.push(x);
+        }
       }
     });
 
