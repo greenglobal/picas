@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "name": "picas",
+    "title": "Picas",
+    "description": "Picas - Group of creative web designer from Vietnam",
+    "keywords": "Picas, IT consultant, web designer, web developer, branding, design",
+    "url": "http://127.0.0.1:8183",
+    "author": "@picas",
+    "image": "http://127.0.0.1:8184/images/brand/picas-1200x800.png"
+  },
+  "imgBrand": "images/brand"
+}
