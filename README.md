@@ -1,11 +1,12 @@
 # picas
-Main website for picas.us - based on [web-starter](https://github.com/ndaidong/web-starter).
+Main website for [picas.us](http://picas.us)
 
 ### Usage
 
 ```
 git clone https://github.com/greenglobal/picas.git
 cd picas
+git checkout dev
 npm install
 ```
 

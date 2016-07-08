@@ -8,5 +8,214 @@
     "author": "@picas",
     "image": "http://picas.us/beta/images/brand/picas-1200x800.png"
   },
-  "imgBrand": "images/brand"
+  "imgBrand": "images/brand",
+  "members": [
+    {
+      "name": "New Walter",
+      "avatar": "images/avatar-1.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Phillip Alexander",
+      "avatar": "images/avatar-2.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Roy Bailey",
+      "avatar": "images/avatar-3.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "John Doe",
+      "avatar": "images/avatar-4.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Howard Mendez",
+      "avatar": "images/avatar-5.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Bryan Walters",
+      "avatar": "images/avatar-6.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Marc Lehman",
+      "avatar": "images/avatar-7.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Virginia Fernandez",
+      "avatar": "images/avatar-8.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    },
+    {
+      "name": "Jonathan Creech",
+      "avatar": "images/avatar-9.jpg",
+      "description": "senior designer",
+      "socialNetworks": [
+        {
+          "type": "facebook",
+          "profileUrl": ""
+        },
+        {
+          "type": "behance",
+          "profileUrl": ""
+        },
+        {
+          "type": "linkedin",
+          "profileUrl": ""
+        },
+        {
+          "type": "dribbble",
+          "profileUrl": ""
+        }
+      ]
+    }
+  ]
 }

@@ -726,16 +726,16 @@ a.txt-lk-green, .txt-lk-green {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.ipicas-bh:before {
+.ipicas-behance:before {
   content: "\e900"; }
 
 .ipicas-dribbble:before {
   content: "\e901"; }
 
-.ipicas-fb:before {
+.ipicas-facebook:before {
   content: "\e902"; }
 
-.ipicas-lin:before {
+.ipicas-linkedin:before {
   content: "\e903"; }
 
 /********************** icon font .end ******************/
