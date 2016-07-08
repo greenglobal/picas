@@ -183,338 +183,36 @@
               <h2 class="tittle-b55 max-680">Our team</h2>
             </div>
             <div class="row our-team-list align-center">
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-1.jpg" alt="New Walter">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">New Walter</a>
-                      </h3>
-                      <p class="description">senior designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
+
+              {{#each members}}
+                <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
+                  <div class="our-team-block">
+                    <div class="image-content">
+                      <img class="image" src="{{avatar}}" alt="{{name}}">
+                    </div>
+                    <div class="maincontent">
+                      <div class="content-md">
+                        <h3 class="title-30"><a href="#" class="txt-lk">
+                          {{name}}
+                        </a></h3>
+                        <p class="description">{{description}}</p>
+                        <ul class="social-link">
+                          
+                          {{#each socialNetworks}}
+                            <li class="item">
+                              <a href="{{profileUrl}}" class="social-link">
+                                <span class="icon-pica ipicas-{{type}}"></span>
+                              </a>
+                            </li>
+                          {{/each}}
+
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-2.jpg" alt="Phillip Alexander">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Phillip Alexander
-                      </a></h3>
-                      <p class="description">designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-3.jpg" alt="Roy Bailey">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Roy Bailey
-                      </a></h3>
-                      <p class="description">designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-4.jpg" alt="John Doe">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        John Doe
-                      </a></h3>
-                      <p class="description">designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-5.jpg" alt="Howard Mendez">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Howard Mendez
-                      </a></h3>
-                      <p class="description">designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-6.jpg" alt="Bryan Walters">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Bryan Walters
-                      </a></h3>
-                      <p class="description">senior designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-7.jpg" alt="Marc Lehman">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Marc Lehman
-                      </a></h3>
-                      <p class="description">motion designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-8.jpg" alt="Virginia Fernandez">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Virginia Fernandez
-                      </a></h3>
-                      <p class="description">designer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-4 media-a-item">
-                <div class="our-team-block">
-                  <div class="image-content">
-                    <img class="image" src="images/avatar-9.jpg" alt="Jonathan Creech">
-                  </div>
-                  <div class="maincontent">
-                    <div class="content-md">
-                      <h3 class="title-30"><a href="#" class="txt-lk">
-                        Jonathan Creech
-                      </a></h3>
-                      <p class="description">senior producer</p>
-                      <ul class="social-link">
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-fb"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-bh"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-lin"></span>
-                          </a>
-                        </li>
-                        <li class="item">
-                          <a href="#" class="social-link">
-                            <span class="icon-pica ipicas-dribbble"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {{/each}}
+
             </div>
           </div>
         </section>
