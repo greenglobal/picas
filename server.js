@@ -18,8 +18,8 @@ app.use((req, res, next) => {
   if (p === '/') {
     p = '/index.html';
   }
-  if (p.match(/^\/([a-zA-Z-0-9]+)\.(html?)$/)) {
-    let f = `./${sourceDir}${p}`;
+  let f = `./${sourceDir}${p}`;
+  if (p.match(/^\/([a-zA-Z-0-9]+)\.(html?|jade|hbs)$/)) {
     if (fs.existsSync(f)) {
       console.log(`Compiling with Handlebars: ${f}`);
       let s = fs.readFileSync(f, 'utf8');
@@ -27,10 +27,9 @@ app.use((req, res, next) => {
       let c = fs.readFileSync(`./${sourceDir}/config.json`, 'utf8');
       let config = JSON.parse(c);
       let html = template(config);
-      return res.status(200).send(html);
+      return res.status(200).type('text/html').send(html);
     }
-  } else if (p.match(/\/([a-zA-Z-0-9]+)\.(css)$/)) {
-    let f = `./${sourceDir}${p}`;
+  } else if (p.match(/\/([a-zA-Z-0-9]+)\.(css|sass|scss)$/)) {
     if (fs.existsSync(f) && !p.includes('vendor/')) {
       console.log(`Processing with PostCSS: ${f}`);
       let s = fs.readFileSync(f, 'utf8');
@@ -39,7 +38,6 @@ app.use((req, res, next) => {
       });
     }
   } else if (p.match(/\/([a-zA-Z-0-9]+)\.(js|es6)$/)) {
-    let f = `./${sourceDir}${p}`;
     if (fs.existsSync(f) && !p.includes('vendor/')) {
       console.log(`Transpiling with Babel: ${f}`);
       let s = fs.readFileSync(f, 'utf8');
@@ -56,7 +54,10 @@ app.use((req, res) => {
 });
 
 var argv = minimist(process.argv.slice(2));
-app.listen(argv.port, () => {
-  console.log(`Server started running at ${argv.port}`);
-  console.log(`http://localhost:${argv.port}`);
-});
+var port = argv.port || argv.p;
+if (port && port >= 0 && port <= 65536) {
+  app.listen(port, () => {
+    console.log(`Server started running at ${port}`);
+    console.log(`http://localhost:${port}`);
+  });
+}

@@ -13,8 +13,8 @@
     "node": ">= 6.0"
   },
   "scripts": {
-    "start": "jake start && node server --port 8183",
-    "release": "jake release && http-server dist -p 8184 -o",
+    "start": "jake start && node server -p 8181",
+    "release": "jake release && http-server dist -p 8182 -o",
     "reset": "jake reset"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "bellajs": "latest",
     "cheerio": "latest",
     "copy-dir": "latest",
+    "css-mqpacker": "latest",
     "cssnano": "latest",
     "express": "latest",
     "handlebars": "latest",
@@ -38,10 +39,11 @@
     "postcss": "latest",
     "postcss-cssnext": "latest",
     "postcss-filter-plugins": "latest",
-    "postcss-mixins": "latest",
-    "postcss-nested": "latest",
+    "postcss-scss": "latest",
+    "precss": "latest",
     "promise-wtf": "latest",
     "recursive-readdir": "latest",
+    "rucksack-css": "latest",
     "shift-codegen": "latest",
     "shift-parser": "latest",
     "svgo": "latest"
