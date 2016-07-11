@@ -20,8 +20,23 @@ var postcss = require('postcss');
 var postcssFilter = require('postcss-filter-plugins');
 var cssnano = require('cssnano');
 var cssnext = require('postcss-cssnext');
-var postcssMixin = require('postcss-mixins');
-var postcssNested = require('postcss-nested');
+var precss = require('precss');
+var scss = require('postcss-scss');
+var rucksack = require('rucksack-css');
+var mqpacker = require('css-mqpacker');
+
+const POSTCSS_PLUGINS = [
+  postcssFilter({
+    silent: true
+  }),
+  mqpacker({
+    sort: true
+  }),
+  precss,
+  cssnext,
+  rucksack,
+  cssnano
+];
 
 var parser = require('shift-parser');
 var codegen = require('shift-codegen').default;
@@ -112,16 +127,6 @@ var iminify = (dir) => {
     }
   });
 };
-
-const POSTCSS_PLUGINS = [
-  postcssFilter({
-    silent: true
-  }),
-  cssnext,
-  cssnano,
-  postcssMixin,
-  postcssNested
-];
 
 var isAbsolute = (url) => {
   return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('//');
@@ -217,7 +222,7 @@ var copyDir = (from, to, clean = true) => {
 var postProcess = (css) => {
   return new Promise((resolve, reject) => {
     return postcss(POSTCSS_PLUGINS)
-      .process(css)
+      .process(css, {parser: scss})
       .then((result) => {
         return resolve(result.css);
       }).catch((err) => {
@@ -238,12 +243,7 @@ var compileCSS = (files) => {
     files.forEach((file) => {
       if (fs.existsSync(file)) {
         let x = fs.readFileSync(file, 'utf8');
-        let is3rd = file.includes('vendor/');
-        if (is3rd) {
-          vs.push(x);
-        } else {
-          as.push(x);
-        }
+        as.push(x);
       }
     });
 
