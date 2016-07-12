@@ -62,11 +62,14 @@ Carefully when you change the value of sourceDir or distDir property. They are r
 
 Don't miss these hot technologies:
 
-- [ECMAScript 2015 (ES6)](http://es6-features.org/)
-- [Babel](http://babeljs.io/)
-- [PostCSS](http://postcss.org/)
-- [Handlebars](http://handlebarsjs.com/)
-- [Jake](http://jakejs.com/)
+- [ES6](http://es6-features.org/) with [Babel](http://babeljs.io/)
+- Modern CSS techniques with [PostCSS](http://postcss.org/):
+  - [CSSNext](http://cssnext.io/)
+  - [rucksack](https://simplaio.github.io/rucksack/)
+  - [mqpacker](https://github.com/hail2u/node-css-mqpacker)
+  - [PreCSS](https://github.com/jonathantneal/precss)
+  - [CSSNano](http://cssnano.co/)
+- Templating with [Handlebars](http://handlebarsjs.com/)
 
 ### License
 
