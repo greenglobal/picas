@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "picas",
   "description": "Smart tool for web developer to build websites with modern utils",
   "homepage": "http://picas.us",
@@ -13,9 +13,10 @@
     "node": ">= 6.0"
   },
   "scripts": {
-    "start": "jake start && node server -p 8181",
-    "release": "jake release && http-server dist -p 8182 -o",
-    "reset": "jake reset"
+    "setup": "node ./bin/setup",
+    "start": "npm run setup && node server -p 8181",
+    "release": "node ./bin/release && http-server dist -p 8182 -o",
+    "reset": "node ./bin/reset"
   },
   "devDependencies": {
     "babel-core": "latest",
@@ -29,11 +30,11 @@
     "cssnano": "latest",
     "express": "latest",
     "handlebars": "latest",
+    "html-minifier": "latest",
     "http-server": "latest",
     "imagemin": "latest",
     "imagemin-mozjpeg": "latest",
     "imagemin-pngquant": "latest",
-    "jake": "latest",
     "minimist": "latest",
     "mkdirp": "latest",
     "postcss": "latest",
