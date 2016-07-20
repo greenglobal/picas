@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.21",
   "name": "picas",
   "description": "Smart tool for web developer to build websites with modern utils",
   "homepage": "http://picas.us",
@@ -13,10 +13,10 @@
     "node": ">= 6.0"
   },
   "scripts": {
-    "setup": "node ./bin/setup",
+    "setup": "node ./workers/bin/setup",
     "start": "npm run setup && node server -p 8181",
-    "release": "node ./bin/release && http-server dist -p 8182 -o",
-    "reset": "node ./bin/reset"
+    "release": "node ./workers/bin/release && http-server dist -p 8182 -o",
+    "reset": "node ./workers/bin/reset"
   },
   "devDependencies": {
     "babel-core": "latest",
@@ -43,6 +43,7 @@
     "postcss-scss": "latest",
     "precss": "latest",
     "promise-wtf": "latest",
+    "pug": "latest",
     "recursive-readdir": "latest",
     "rucksack-css": "latest",
     "shift-codegen": "latest",
