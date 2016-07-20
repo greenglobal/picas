@@ -14,6 +14,8 @@ var pkg = require('../package');
 var bConfig = pkg.builder;
 var sourceDir = bConfig.sourceDir;
 
+var pug = require('pug');
+
 var Handlebars = require('handlebars');
 Handlebars.registerHelper({
   eq: (v1, v2) => {
@@ -87,7 +89,7 @@ var fixPath = (p) => {
 };
 
 var isAbsolute = (url) => {
-  return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('//');
+  return url && (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('//'));
 };
 
 var transpile = (code) => {
@@ -246,6 +248,9 @@ var build = (layout, isRelease = false) => {
 
   let file = path.normalize(layout);
   let dir = path.dirname(file);
+  let basename = path.basename(file);
+  let extname = path.extname(file);
+  let pagename = basename.replace(extname, '');
 
   let c = fs.readFileSync(`./${sourceDir}/config.json`, 'utf8');
   let data = JSON.parse(c) || {};
@@ -333,6 +338,8 @@ var build = (layout, isRelease = false) => {
 
   let revision = bella.id;
 
+  let isJade = file.match(/\.(jade|pug)$/) !== null;
+
   if (!data || !bella.isObject(data)) {
     data = {
       meta: {}
@@ -361,34 +368,45 @@ var build = (layout, isRelease = false) => {
         });
       },
       (next) => {
-        if (!continuable || !sHtml) {
+        if (!continuable || !sHtml || isJade) {
           return next();
         }
         sHtml = getContainer(sHtml, dir);
         return next();
       },
       (next) => {
-        if (!continuable || !sHtml) {
+        if (!continuable || !sHtml || isJade) {
           return next();
         }
         sHtml = getPartial(sHtml, dir);
         return next();
       },
       (next) => {
+        if (!continuable || !sHtml || isJade) {
+          return next();
+        }
+        let template = Handlebars.compile(sHtml);
+        sHtml = template(data);
+        return next();
+      },
+      (next) => {
+        if (!continuable || !sHtml || !isJade) {
+          return next();
+        }
+        let template = pug.compile(sHtml, {
+          filename: basename,
+          pretty: isRelease
+        });
+        sHtml = template(data);
+        return next();
+      },
+      (next) => {
         if (!continuable || !sHtml) {
           return next();
         }
-
-        try {
-          let template = Handlebars.compile(sHtml);
-          sHtml = template(data);
-          $ = cheerio.load(sHtml, {
-            normalizeWhitespace: true
-          });
-        } catch (e) {
-          sHtml = 'Something went wrong. Please try again later.';
-          console.trace(e);
-        }
+        $ = cheerio.load(sHtml, {
+          normalizeWhitespace: true
+        });
         return next();
       },
       (next) => {
@@ -424,7 +442,7 @@ var build = (layout, isRelease = false) => {
         console.log('Compiling CSS...');
         return compileCSS(cssFiles).then((content) => {
           css = content;
-          let styleTag = `<link rel="stylesheet" type="text/css" href="css/all.min.css?rev=${revision}" />`;
+          let styleTag = `<link rel="stylesheet" type="text/css" href="css/${pagename}.min.css?rev=${revision}" />`;
           $('head').append(styleTag);
           return content;
         }).finally(next);
@@ -436,7 +454,7 @@ var build = (layout, isRelease = false) => {
         console.log('Compiling JS...');
         return compileJS(jsFiles).then((content) => {
           js = content;
-          let scriptTag = `<script type="text/javascript" src="js/all.min.js?rev=${revision}"></script>`;
+          let scriptTag = `<script type="text/javascript" src="js/${pagename}.min.js?rev=${revision}"></script>`;
           $('body').append(scriptTag);
           return content;
         }).finally(next);
@@ -479,9 +497,25 @@ var io = (req, res, next) => {
     p = '/index.html';
   }
   let f = `./${sourceDir}${p}`;
-  if (p.match(/^\/([a-zA-Z-0-9]+)\.(html?|jade|hbs)$/)) {
+
+  if (!path.extname(f)) {
+    if (fs.existsSync(f + '.jade')) {
+      f += '.jade';
+    } else if (fs.existsSync(f + '.pug')) {
+      f += '.pug';
+    } else if (fs.existsSync(f + '.htm')) {
+      f += '.htm';
+    } else if (fs.existsSync(f + '.html')) {
+      f += '.html';
+    } else if (fs.existsSync(f + '.hbs')) {
+      f += '.hbs';
+    }
+    p += path.extname(f);
+  }
+
+  if (p.match(/^\/([a-zA-Z-0-9]+)\.(html?|jade|pug|hbs)$/)) {
     if (fs.existsSync(f)) {
-      console.log(`Compiling with Handlebars: ${f}`);
+      console.log(`Compiling with template engine: ${f}`);
       return build(f).then((data) => {
         return res.status(200).send(data.html);
       });
