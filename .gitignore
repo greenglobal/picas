@@ -16,3 +16,4 @@ coverage
 dist
 src/js/vendor
 src/css/vendor
+config.bat
