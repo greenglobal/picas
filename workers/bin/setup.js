@@ -5,8 +5,8 @@
  * @ndaidong at Twitter
  **/
 
-var pkg = require('../package');
-var builder = require('../workers/builder');
+var pkg = require('../../package');
+var builder = require('../builder');
 var createDir = builder.createDir;
 
 var bella = require('bellajs');
